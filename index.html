@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Biira Homes | Kisubi - Comfortable & Modern Stay</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Normalize + simple CSS reset -->
+  <style>
+    :root{
+      --accent:#0f766e; /* teal */
+      --accent-2:#06b6d4; /* light cyan */
+      --muted:#6b7280;
+      --bg:#f8fafc;
+      --card:#ffffff;
+      --maxw:1200px;
+      --radius:14px;
+      --shadow: 0 6px 22px rgba(15,23,42,0.08);
+      --glass: rgba(255,255,255,0.6);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      background:linear-gradient(180deg,var(--bg),#ffffff);color:#0f172a;line-height:1.45;
+      -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+    }
+    a{color:inherit;text-decoration:none}
+
+    /* Layout */
+    .container{max-width:var(--maxw);margin:0 auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{font-family:Playfair Display,serif;font-size:22px;font-weight:700;color:var(--accent)}
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{color:var(--muted);font-weight:600}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:28px 0}
+    .hero-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px}
+    h1{font-family:Playfair Display,serif;font-size:34px;margin:0 0 8px}
+    p.lead{margin:0;color:var(--muted)}
+
+    .hero-cta{display:flex;gap:12px;margin-top:16px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:10px;font-weight:700;cursor:pointer}
+    .btn-primary{background:var(--accent);color:white}
+    .btn-outline{background:transparent;border:2px solid var(--accent);color:var(--accent)}
+
+    /* Quick info */
+    .info{display:flex;flex-direction:column;gap:8px}
+    .info .meta{display:flex;gap:12px;align-items:center;color:var(--muted);font-weight:600}
+
+    /* Gallery */
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .gallery-grid img{width:100%;height:160px;object-fit:cover;border-radius:10px}
+
+    /* Features */
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:26px 0}
+    .feature{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow);text-align:center}
+    .feature h4{margin:8px 0 0}
+
+    /* Rooms */
+    .rooms{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .room{background:linear-gradient(180deg,rgba(255,255,255,0.8),var(--card));padding:14px;border-radius:12px;box-shadow:var(--shadow)}
+    .room img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+
+    /* Map + contact */
+    .map-contact{display:grid;grid-template-columns:1fr 420px;gap:18px;margin-top:22px}
+    iframe{width:100%;height:320px;border:0;border-radius:12px}
+    .contact-card{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow)}
+    .contact-card h3{margin-top:0}
+
+    /* Footer */
+    footer{margin:36px 0;padding:18px 0;color:var(--muted);text-align:center}
+
+    /* Floating WhatsApp */
+    .whatsapp{position:fixed;right:18px;bottom:18px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:white;padding:14px;border-radius:999px;box-shadow:0 10px 30px rgba(6,182,212,0.18);display:flex;gap:10px;align-items:center;font-weight:700;z-index:999}
+
+    /* Responsive */
+    @media (max-width:1000px){
+      .hero{grid-template-columns:1fr}
+      .map-contact{grid-template-columns:1fr}
+      .gallery-grid{grid-template-columns:repeat(3,1fr)}
+      .features{grid-template-columns:repeat(2,1fr)}
+      .rooms{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:640px){
+      .gallery-grid img{height:110px}
+      .gallery-grid{grid-template-columns:repeat(2,1fr)}
+      .features{grid-template-columns:1fr}
+      .rooms{grid-template-columns:1fr}
+      nav{display:none}
+      .container{padding:16px}
+      h1{font-size:26px}
+      .logo{font-size:20px}
+    }
+
+    /* Accessibility focus */
+    a:focus{outline:3px solid rgba(6,182,212,0.2);outline-offset:3px}
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">Biira Homes</div>
+        <div style="color:var(--muted);font-weight:600">Kawuku — Kisubi</div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#rooms">Rooms</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#location">Location</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-card">
+        <h1>Biira Homes — Comfortable stays by the lakeshore</h1>
+        <p class="lead">Modern rooms, friendly service, and easy access to Kampala & Entebbe. Ideal for business and leisure travellers.</p>
+
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#contact">Book Now</a>
+          <a class="btn btn-outline" href="#gallery">View Gallery</a>
+        </div>
+
+        <div style="margin-top:18px;display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+          <div class="info">
+            <div class="meta">📍 Kawuku Kakindu-Ruzindana road, Kisubi, Katabi</div>
+            <div class="meta">📞 0740 913450</div>
+            <div class="meta">✅ Free Wi‑Fi · Parking · Airport transfers</div>
+          </div>
+        </div>
+
+      </div>
+
+      <aside>
+        <div style="background:linear-gradient(180deg,var(--card),var(--glass));padding:12px;border-radius:12px;box-shadow:var(--shadow)">
+          <h3 style="margin:0 0 8px">Quick facts</h3>
+          <p style="margin:0;color:var(--muted)">Check-in: 2:00 PM · Check-out: 12:00 PM</p>
+          <p style="margin:8px 0 0;color:var(--muted)">Amenities: Free breakfast, private bathrooms, 24/7 front desk</p>
+
+          <div style="margin-top:12px">
+            <a href="#contact" class="btn btn-primary" style="width:100%">Reserve a Room</a>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Features / Amenities -->
+    <section id="about">
+      <h2 style="margin-bottom:6px">Why choose Biira Homes</h2>
+      <p style="color:var(--muted);margin-top:0">Modern comfort, warm Ugandan hospitality, and excellent value near Kampala and Entebbe.</p>
+
+      <div class="features" aria-label="hotel features">
+        <div class="feature">
+          <div style="font-size:28px">🛏️</div>
+          <h4>Comfortable Rooms</h4>
+          <p style="color:var(--muted)">Well-furnished rooms with en-suite bathrooms and clean linens.</p>
+        </div>
+        <div class="feature">
+          <div style="font-size:28px">🍳</div>
+          <h4>Fresh Breakfast</h4>
+          <p style="color:var(--muted)">Daily breakfast featuring local and continental options.</p>
+        </div>
+        <div class="feature">
+          <div style="font-size:28px">🚗</div>
+          <h4>Airport Transfers</h4>
+          <p style="color:var(--muted)">Pickup & drop-off on request (charge may apply).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rooms (sample) -->
+    <section id="rooms">
+      <h2>Rooms & Rates</h2>
+      <div class="rooms">
+        <article class="room">
+          <img src="img/1.jpg" alt="Standard Room at Biira Homes">
+          <h4 style="margin:10px 0 0">Standard Room</h4>
+          <p style="color:var(--muted);margin:6px 0">Single/double occupancy · Free Wi‑Fi · Breakfast included</p>
+          <div style="display:flex;gap:8px;margin-top:10px"><strong>UGX 70,000/night</strong><a href="#contact" class="btn btn-outline">Book</a></div>
+        </article>
+        <article class="room">
+          <img src="img/2.jpg" alt="Deluxe Room at Biira Homes">
+          <h4 style="margin:10px 0 0">Deluxe Room</h4>
+          <p style="color:var(--muted);margin:6px 0">Spacious room with lake/compound view.</p>
+          <div style="display:flex;gap:8px;margin-top:10px"><strong>UGX 120,000/night</strong><a href="#contact" class="btn btn-outline">Book</a></div>
+        </article>
+        <article class="room">
+          <img src="img/3.jpg" alt="Family Room at Biira Homes">
+          <h4 style="margin:10px 0 0">Family Suite</h4>
+          <p style="color:var(--muted);margin:6px 0">Two bedrooms, kitchen corner, ideal for families.</p>
+          <div style="display:flex;gap:8px;margin-top:10px"><strong>UGX 200,000/night</strong><a href="#contact" class="btn btn-outline">Book</a></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" style="margin-top:22px">
+      <h2>Gallery</h2>
+      <p style="color:var(--muted);margin-top:0">Images from around Biira Homes. Click to open full-size.</p>
+
+      <div class="gallery-grid" role="list">
+        <!-- Image placeholders: img/1.jpg .. img/19.jpg -->
+        <a href="img/1.jpg" target="_blank" role="listitem"><img src="img/1.jpg" alt="Biira Homes photo 1"></a>
+        <a href="img/2.jpg" target="_blank" role="listitem"><img src="img/2.jpg" alt="Biira Homes photo 2"></a>
+        <a href="img/3.jpg" target="_blank" role="listitem"><img src="img/3.jpg" alt="Biira Homes photo 3"></a>
+        <a href="img/4.jpg" target="_blank" role="listitem"><img src="img/4.jpg" alt="Biira Homes photo 4"></a>
+        <a href="img/5.jpg" target="_blank" role="listitem"><img src="img/5.jpg" alt="Biira Homes photo 5"></a>
+        <a href="img/6.jpg" target="_blank" role="listitem"><img src="img/6.jpg" alt="Biira Homes photo 6"></a>
+        <a href="img/7.jpg" target="_blank" role="listitem"><img src="img/7.jpg" alt="Biira Homes photo 7"></a>
+        <a href="img/8.jpg" target="_blank" role="listitem"><img src="img/8.jpg" alt="Biira Homes photo 8"></a>
+        <a href="img/9.jpg" target="_blank" role="listitem"><img src="img/9.jpg" alt="Biira Homes photo 9"></a>
+        <a href="img/10.jpg" target="_blank" role="listitem"><img src="img/10.jpg" alt="Biira Homes photo 10"></a>
+        <a href="img/11.jpg" target="_blank" role="listitem"><img src="img/11.jpg" alt="Biira Homes photo 11"></a>
+        <a href="img/12.jpg" target="_blank" role="listitem"><img src="img/12.jpg" alt="Biira Homes photo 12"></a>
+        <a href="img/13.jpg" target="_blank" role="listitem"><img src="img/13.jpg" alt="Biira Homes photo 13"></a>
+        <a href="img/14.jpg" target="_blank" role="listitem"><img src="img/14.jpg" alt="Biira Homes photo 14"></a>
+        <a href="img/15.jpg" target="_blank" role="listitem"><img src="img/15.jpg" alt="Biira Homes photo 15"></a>
+        <a href="img/16.jpg" target="_blank" role="listitem"><img src="img/16.jpg" alt="Biira Homes photo 16"></a>
+        <a href="img/17.jpg" target="_blank" role="listitem"><img src="img/17.jpg" alt="Biira Homes photo 17"></a>
+        <a href="img/18.jpg" target="_blank" role="listitem"><img src="img/18.jpg" alt="Biira Homes photo 18"></a>
+        <a href="img/19.jpg" target="_blank" role="listitem"><img src="img/19.jpg" alt="Biira Homes photo 19"></a>
+      </div>
+    </section>
+
+    <!-- Location + contact form -->
+    <section id="location" class="map-contact">
+      <div>
+        <h2>Location</h2>
+        <p style="color:var(--muted)">Kawuku Kakindu-Ruzindana road, Kisubi, Katabi — find us on the map below.</p>
+        <!-- Google Maps embed (search query) -->
+        <iframe src="https://www.google.com/maps?q=Kawuku+Kakindu-Ruzindana+road+Kisubi+Katabi&output=embed" loading="lazy" aria-label="Map showing Biira Homes location"></iframe>
+
+        <div style="margin-top:12px;color:var(--muted);font-size:14px">Coordinates (approx): 0.1399, 32.54406</div>
+      </div>
+
+      <aside class="contact-card" id="contact">
+        <h3>Contact & Booking</h3>
+        <p style="color:var(--muted)">Call or WhatsApp us at <strong>0740 913450</strong> — or use the form below to request a reservation.</p>
+
+        <!-- Simple contact form using Formspree (replace action with your endpoint) -->
+        <form action="https://formspree.io/f/mayplgwq" method="POST">
+          <label style="display:block;margin-top:10px;font-weight:600">Full name</label>
+          <input name="name" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef">
+
+          <label style="display:block;margin-top:10px;font-weight:600">Email</label>
+          <input name="email" type="email" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef">
+
+          <label style="display:block;margin-top:10px;font-weight:600">Message / Reservation details</label>
+          <textarea name="message" rows="4" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef"></textarea>
+
+          <div style="margin-top:12px;display:flex;gap:10px">
+            <button type="submit" class="btn btn-primary">Send request</button>
+            <a href="tel:+256740913450" class="btn btn-outline">Call 0740 913450</a>
+          </div>
+        </form>
+
+        <hr style="margin:14px 0;border:none;border-top:1px solid #eef2f6">
+        <div style="color:var(--muted);font-size:14px">Office hours: Mon–Sun 7:00 — 22:00</div>
+      </aside>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Biira Homes — Kawuku, Kisubi · Phone: 0740 913450 · Built with care
+    </footer>
+  </div>
+
+  <!-- Floating WhatsApp button -->
+  <a aria-label="WhatsApp Biira Homes" class="whatsapp" href="https://wa.me/256740913450?text=Hello%20Biira%20Homes%2C%20I%27d%20like%20to%20book%20a%20room" target="_blank">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="filter:drop-shadow(0 2px 6px rgba(0,0,0,0.12))"><path d="M20.52 3.48A11.94 11.94 0 0 0 12 .5 12 12 0 0 0 .5 12c0 2.12.56 4.09 1.54 5.83L.5 23.5l5.98-1.55A11.94 11.94 0 0 0 12 23.5c6.63 0 12-5.37 12-12 0-1.81-.42-3.52-1.48-5.02zM12 21.5c-1.54 0-3-.36-4.3-1L4 20l.62-2.1A9.47 9.47 0 0 1 3 12 9 9 0 0 1 21 12c0 4.97-4.03 9-9 9z" fill="#fff"></path><path d="M17.2 14.03c-.28-.14-1.67-.82-1.93-.91-.26-.09-.45-.14-.64.14-.18.28-.7.91-.86 1.1-.16.18-.32.2-.6.07-.28-.14-1.18-.44-2.25-1.39-.83-.74-1.39-1.66-1.55-1.94-.16-.28-.02-.43.12-.57.12-.12.28-.32.42-.48.14-.16.18-.28.28-.46.09-.18.05-.35-.02-.49-.07-.14-.64-1.54-.88-2.1-.23-.55-.46-.48-.64-.49-.16 0-.35-.01-.53-.01s-.49.07-.75.35c-.26.28-1 1-1 2.45 0 1.45 1.03 2.86 1.17 3.06.14.2 2.02 3.08 4.9 4.32 2.88 1.23 2.88.82 3.4.77.52-.06 1.67-.68 1.9-1.34.23-.66.23-1.22.16-1.34-.07-.12-.26-.18-.55-.32z" fill="#fff"></path></svg>
+    <span>WhatsApp</span>
+  </a>
+
+  <script>
+    // set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // simple lightbox for gallery (progressive enhancement)
+    document.querySelectorAll('.gallery-grid a').forEach(a=>{
+      a.addEventListener('click', function(e){
+        if(window.matchMedia && window.matchMedia('(pointer:fine)').matches){
+          e.preventDefault();
+          const src = this.href;
+          const overlay = document.createElement('div');
+          overlay.style.position='fixed';overlay.style.inset=0;overlay.style.background='rgba(0,0,0,0.7)';overlay.style.display='flex';overlay.style.alignItems='center';overlay.style.justifyContent='center';overlay.style.zIndex=2000;
+          const img = document.createElement('img');img.src=src;img.style.maxWidth='94%';img.style.maxHeight='94%';img.style.borderRadius='10px';overlay.appendChild(img);
+          overlay.addEventListener('click',()=>overlay.remove());
+          document.body.appendChild(overlay);
+        }
+      })
+    })
+  </script>
+
+</body>
+</html>
